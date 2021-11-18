@@ -129,14 +129,14 @@ window.snake.more_menu = function() {
 
   // 13
   img = new Image;
-  img.src = 'https://i.postimg.cc/sXM1sTcq/manyapples-1.png';
+  img.src = 'https://i.postimg.cc/15kHs2V9/Sheep-King-Final.png';
   img.width = 47;
   img.height = 47;
   document.querySelector('#count').appendChild(img);
 
   // 25
   img = new Image;
-  img.src = 'https://i.postimg.cc/YSnj551Q/appletree-1.png';
+  img.src = 'https://i.postimg.cc/15kHs2V9/Sheep-King-Final.png';
   img.width = 47;
   img.height = 47;
   document.querySelector('#count').appendChild(img);
