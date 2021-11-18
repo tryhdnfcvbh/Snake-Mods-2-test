@@ -366,9 +366,16 @@ window.snake.more_menu = function() {
         )
       );
 
+      const limesarebetter = code.match(
+        /[a-zA-Z0-9_$]{1,6}=function\(a\){switch\(a\.[a-zA-Z0-9_$]{1,6}\){case 1:return\.66[^}]*?1}}/
+      )[0];
+
+      const limename = limesarebetter.match(/[a-zA-Z0-9_$]{1,6}/)[0];
+      const limespeed = limesarebetter.match(/switch\(a\.[a-zA-Z0-9_$]{1,6}\)/)[0].replace('switch(a.', 'this.').replace(')', '');
+
       eval(
         //Most likely speed, the greater the slower you go
-        code.match(
+        limesarebetter.replace(
           /[a-zA-Z0-9_$]{1,6}=function\(a\){switch\(a\.[a-zA-Z0-9_$]{1,6}\){case 1:return\.66[^}]*?1}}/
         )[0].replace(
           '1.33;',
@@ -377,13 +384,8 @@ window.snake.more_menu = function() {
       );
 
       //Start of in change thing
-      const limesarebetter = code.match(
-        /[a-zA-Z0-9_$]{1,6}=function\(a\){switch\(a\.[a-zA-Z0-9_$]{1,6}\){case 1:return\.66[^}]*?1}}/
-      )[0];
-
-      const limename = limesarebetter.match(/[a-zA-Z0-9_$]{1,6}/)[0];
-      const limespeed = limesarebetter.match(/switch\(a\.[a-zA-Z0-9_$]{1,6}\)/)[0].replace('switch(a.', 'this.').replace(')', '');
-          
+      
+         
       const soup = code.match(
         /[a-zA-Z0-9_$]{1,6}\.prototype\.update=function\(\){[^]*?this\)}}}}/
       )[0];
