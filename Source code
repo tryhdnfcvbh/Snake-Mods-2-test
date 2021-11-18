@@ -376,6 +376,10 @@ window.snake.more_menu = function() {
         )
       );
 
+      const soup = code.match(
+        /[a-zA-Z0-9_$]{1,6}\.prototype\.update=function\(\){[^]*?this\)}}}}/
+      )[0];
+
       eval('var _soep = 1.85;');
         
         eval(
