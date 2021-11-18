@@ -376,6 +376,14 @@ window.snake.more_menu = function() {
         )
       );
 
+      //Start of in change thing
+      const limesarebetter = code.match(
+        /[a-zA-Z0-9_$]{1,6}=function\(a\){switch\(a\.[a-zA-Z0-9_$]{1,6}\){case 1:return\.66[^}]*?1}}/
+      )[0];
+
+      const limename = limesarebetter.match(/[a-zA-Z0-9_$]{1,6}/)[0];
+      const limespeed = limesarebetter.match(/switch\(a\.[a-zA-Z0-9_$]{1,6}\)/)[0].replace('switch(a.', 'this.').replace(')', '');
+          
       const soup = code.match(
         /[a-zA-Z0-9_$]{1,6}\.prototype\.update=function\(\){[^]*?this\)}}}}/
       )[0];
@@ -386,13 +394,16 @@ window.snake.more_menu = function() {
 
       eval('var _soup = 1.33;');
       eval('var _soep = 1.85;');
-        
-        eval(
-          soup.replace(
-            f,
-            f + `_soep = Math.random() < .5 ? .45 : 1.85);`
-          )
-        );
+       
+      eval(
+        soup.replace(
+          f,
+          f + `_soep = Math.random() < .5 ? .45 : 1.85;${limespeed} === 3 && (${a.replace(limename + '(this);', '_soup')});${limespeed} === 6 && (${a.replace(limename + '(this);', '_soep')});`
+        )
+      );
+
+            //End of in change thing
+
 
       eval(
         //Most likely map size
