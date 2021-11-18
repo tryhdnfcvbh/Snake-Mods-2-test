@@ -227,7 +227,7 @@ window.snake.more_menu = function() {
                 ${Place_The_Apple_Maybe} -2, -1));
                 ${Place_The_Apple_Maybe} 1, -2));
                 ${Place_The_Apple_Maybe} -1, -2));
-                ${Place_The_Apple_Maybe} -5, -2));
+                ${Place_The_Apple_Maybe} -5.3, -2.3));
 
               } else if(${Apple_Count_Thing} === 4) {
 
