@@ -380,12 +380,17 @@ window.snake.more_menu = function() {
         /[a-zA-Z0-9_$]{1,6}\.prototype\.update=function\(\){[^]*?this\)}}}}/
       )[0];
 
+      const f = soup.match(
+        /:this\.[a-zA-Z0-9_$]{1,6}\+=1;this\.[a-zA-Z0-9_$]{1,6}\+\+;/
+      )[0];
+
+      eval('var _soup = 1.33;');
       eval('var _soep = 1.85;');
         
         eval(
           soup.replace(
             f,
-            f + `_soep = Math.random() < .5 ? .45 : 1.85)`
+            f + `_soep = Math.random() < .5 ? .45 : 1.85);`
           )
         );
 
