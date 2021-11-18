@@ -372,9 +372,18 @@ window.snake.more_menu = function() {
           /[a-zA-Z0-9_$]{1,6}=function\(a\){switch\(a\.[a-zA-Z0-9_$]{1,6}\){case 1:return\.66[^}]*?1}}/
         )[0].replace(
           '1.33;',
-          `1.33;case 3:return 1.85;case 4:return 0.45;case 5:return 18.5;case 6:return 0.35;case 7:return 0.25;case 8:return 0.15;case 9:return 0.05;case 10:return 26640;case 11:return 0.00001;`
+          `1.33;case 3:return _soep;case 4:return 0.45;case 5:return 18.5;case 6:return 0.35;case 7:return 0.25;case 8:return 0.15;case 9:return 0.05;case 10:return 26640;case 11:return 0.00001;`
         )
       );
+
+      eval('var _soep = 1.85;');
+        
+        eval(
+          soup.replace(
+            f,
+            f + `_soep = Math.random() < .5 ? .45 : 1.85)`
+          )
+        );
 
       eval(
         //Most likely map size
